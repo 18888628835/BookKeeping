@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 const Wrap = styled.section`
   flex-grow: 1;
@@ -33,7 +33,6 @@ const Wrap = styled.section`
       margin: 5px 15px 5px 0;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
       &.selected {
         background-color: #f5da74;
         color: black;
@@ -48,9 +47,13 @@ const initialState = [
   { id: 3, name: "行" },
 ];
 type X = typeof initialState;
-const TagsList = () => {
+type P = {
+  selectTag: number;
+  onChange: (selectTag: number) => void;
+};
+const TagsList: FC<P> = (props) => {
   const [tags, setTags] = useState<X>(initialState);
-  const [selectTag, setSelectTag] = useState(-1);
+  const { selectTag, onChange } = props;
   const onAddTags: (tags: X) => void = (tags: X) => {
     const text: string | null = prompt("请输入表签名");
     if (text === null || text.trim() === "") {
@@ -76,7 +79,7 @@ const TagsList = () => {
             <li
               className={selectTag === tag.id ? "selected" : ""}
               onClick={() => {
-                setSelectTag(tag.id);
+                onChange(tag.id);
               }}
               key={tag.id}
             >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 const Wrap = styled.section`
   display: flex;
@@ -29,8 +29,11 @@ const Wrap = styled.section`
     }
   }
 `;
-
-const NumberPad = () => {
+type P = {
+  outPut: string;
+  onChange: (outPut: string) => void;
+};
+const NumberPad: FC<P> = (props) => {
   const buttonList = [
     "1",
     "2",
@@ -44,49 +47,58 @@ const NumberPad = () => {
     "8",
     "9",
   ];
-  const [outPut, setOutPut] = useState<string>("0");
+  const { outPut, onChange } = props;
   const onClick: (e: React.MouseEvent) => void = (e) => {
     const a = (e.target as HTMLButtonElement).innerText;
     const array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    if (outPut === "0" && a !== "清空" && a !== "删除") {
-      setOutPut(a);
+    const setOutput = (outPut: string) => {
+      if (outPut.length > 16) {
+        onChange(outPut.slice(0, 16));
+      } else {
+        onChange(outPut);
+      }
+    };
+    if (outPut === "0" && a !== "ok") {
+      setOutput(a);
     } else if (array.indexOf(a) >= 0) {
-      setOutPut(outPut + a);
-    } else if (a === "清空") {
-      setOutPut("0");
-    } else if (a === "删除") {
-      setOutPut(outPut.slice(0, -1) || "0");
+      setOutput(outPut + a);
     }
-  };
-  const onPoint = () => {
-    if (outPut.indexOf(".") === -1) {
-      setOutPut(outPut + ".");
-    }
-  };
-  const onZero = () => {
-    if (outPut !== "0") {
-      setOutPut(outPut + "0");
+    switch (a) {
+      case "清空":
+        setOutput("0");
+        break;
+      case "删除":
+        setOutput(outPut.slice(0, -1) || "0");
+        break;
+      case ".":
+        if (outPut.indexOf(".") === -1 || outPut === "0") {
+          setOutput(outPut + ".");
+        }
+        break;
+      case "0":
+        if (outPut !== "0") {
+          setOutput(outPut + "0");
+        }
+        break;
+      case "ok":
+        console.log("ok");
+        break;
+      default:
+        break;
     }
   };
   return (
     <Wrap>
       <div className="pad">{outPut}</div>
-      <div className="number">
+      <div className="number" onClick={onClick}>
         {buttonList.map((v) => {
-          return (
-            <button onClick={onClick} key={v}>
-              {v}
-            </button>
-          );
+          return <button key={v}>{v}</button>;
         })}
         <button className="ok">ok</button>
-        <button onClick={onZero} style={{ width: "50%" }}>
-          0
-        </button>
-        <button onClick={onPoint}>.</button>
+        <button style={{ width: "50%" }}>0</button>
+        <button>.</button>
       </div>
     </Wrap>
   );
 };
-
 export default NumberPad;

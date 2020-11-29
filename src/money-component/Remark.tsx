@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { FC, useRef } from "react";
 import styled from "styled-components";
 const Wrap = styled.section`
   height: 8vh;
@@ -20,11 +20,15 @@ const Wrap = styled.section`
     padding-right: 20px;
   }
 `;
-const Remark = () => {
-  const [text, setText] = useState<string>("");
+type P = {
+  text: string;
+  onChange: (text: string) => void;
+};
+const Remark: FC<P> = (props) => {
+  const { onChange } = props;
   const ref = useRef<HTMLInputElement>(null);
   const onBlur: (e: React.FocusEvent) => void = (e) => {
-    setText((ref.current as HTMLInputElement).value);
+    onChange((ref.current as HTMLInputElement).value);
   };
   return (
     <Wrap>

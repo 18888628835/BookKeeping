@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 const Wrap = styled.section`
   display: flex;
@@ -10,31 +9,34 @@ const Wrap = styled.section`
     align-items: center;
     flex-grow: 1;
     font-size: 20px;
-    color: #343132;
+    color: #a3a3a3;
     background-color: #f9da61;
     &.select {
       border-bottom: 2px solid black;
+      color: #333333;
     }
   }
 `;
-type X = 0 | 1;
-const Type = () => {
-  const [type, setType] = useState<X>(1);
-  const hash = { 收入: 1, 支出: 0 };
+type P = {
+  type: string;
+  onChange: (type: string) => void;
+};
+const Type: FunctionComponent<P> = (props) => {
+  const { type, onChange } = props;
   return (
     <Wrap>
       <div
-        className={hash["收入"] === type ? "select" : ""}
+        className={type === "收入" ? "select" : ""}
         onClick={() => {
-          setType(1);
+          onChange("收入");
         }}
       >
         收入
       </div>
       <div
-        className={hash["支出"] === type ? "select" : ""}
+        className={type === "支出" ? "select" : ""}
         onClick={() => {
-          setType(0);
+          onChange("支出");
         }}
       >
         支出

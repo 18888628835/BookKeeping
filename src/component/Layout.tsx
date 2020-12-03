@@ -65,5 +65,4 @@ const Layout: FunctionComponent<P> = (props) => {
     </Wrap>
   );
 };
-
 export default Layout;

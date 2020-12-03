@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 const Wrap = styled.section`
   height: 8vh;
@@ -25,15 +25,16 @@ type P = {
   onChange: (text: string) => void;
 };
 const Remark: FC<P> = (props) => {
-  const { onChange } = props;
-  const ref = useRef<HTMLInputElement>(null);
-  const onBlur: (e: React.FocusEvent) => void = (e) => {
-    onChange((ref.current as HTMLInputElement).value);
-  };
+  const { text, onChange } = props;
   return (
     <Wrap>
       <div>备注</div>
-      <input ref={ref} type="text" onBlur={onBlur} />
+      <input
+        value={text}
+        onChange={(e) => {
+          onChange(e.target.value);
+        }}
+      />
     </Wrap>
   );
 };

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+
 const Wrap = styled.section`
   display: flex;
   flex-direction: column;
@@ -32,6 +33,7 @@ const Wrap = styled.section`
 type P = {
   outPut: string;
   onChange: (outPut: string) => void;
+  onOk: () => void;
 };
 const NumberPad: FC<P> = (props) => {
   const buttonList = [
@@ -47,7 +49,7 @@ const NumberPad: FC<P> = (props) => {
     "8",
     "9",
   ];
-  const { outPut, onChange } = props;
+  const { outPut, onChange, onOk } = props;
   const onClick: (e: React.MouseEvent) => void = (e) => {
     const a = (e.target as HTMLButtonElement).innerText;
     const array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -81,7 +83,7 @@ const NumberPad: FC<P> = (props) => {
         }
         break;
       case "ok":
-        console.log("ok");
+        onOk();
         break;
       default:
         break;

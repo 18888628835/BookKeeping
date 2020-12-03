@@ -1,5 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
+import useTags from "hook/useTags";
 const Wrap = styled.section`
   flex-grow: 1;
   display: flex;
@@ -27,7 +28,7 @@ const Wrap = styled.section`
     > li {
       display: flex;
       height: 24px;
-      width: 49px;
+      padding: 10px;
       background-color: #f4f5f6;
       border-radius: 8px;
       margin: 5px 15px 5px 0;
@@ -40,27 +41,13 @@ const Wrap = styled.section`
     }
   }
 `;
-const initialState = [
-  { id: 0, name: "衣" },
-  { id: 1, name: "食" },
-  { id: 2, name: "住" },
-  { id: 3, name: "行" },
-];
-type X = typeof initialState;
 type P = {
   selectTag: number;
   onChange: (selectTag: number) => void;
 };
 const TagsList: FC<P> = (props) => {
-  const [tags, setTags] = useState<X>(initialState);
+  const { tags, onAddTags } = useTags();
   const { selectTag, onChange } = props;
-  const onAddTags: (tags: X) => void = (tags: X) => {
-    const text: string | null = prompt("请输入表签名");
-    if (text === null || text.trim() === "") {
-      return null;
-    }
-    setTags([...tags, { id: Math.random(), name: text }]);
-  };
   return (
     <Wrap>
       <div>

@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+由于对前端技术非常感兴趣，在学习了前端技能后，我决定手动做一个项目。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+由于本人有记账的习惯，所以就决定写一个简易的记账网页，只要能够满足我记账的需求就行😋
 
-## Available Scripts
+技术应用：采用TypeScript、ReactHOOKs、React Router+dayJS库等编写
 
-In the project directory, you can run:
+由于不涉及到接口，所以我主要还是用localStorage来处理数据，保存我的一些记账数据。
 
-### `yarn start`
+目前功能如下：
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1、标签新增、删除、修改
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2、添加备注
 
-### `yarn test`
+3、记录金额
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4、收入支出分类
 
-### `yarn build`
+5、金额清空、回删等
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6、记录明细等
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+未来添加功能：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1、记录明细的修改、删除
 
-### `yarn eject`
+2、记录明细增加图表功能
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3、时间可供选择而非记录当前时间
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+目前功能截图-首页

@@ -29,18 +29,27 @@
 3、时间可供选择而非记录当前时间
 
 ——首页——
-![image](https://user-images.githubusercontent.com/53749772/106870348-f6ed9a80-670b-11eb-9363-0b54402908c2.png)
+
+![image](https://user-images.githubusercontent.com/53749772/106871778-91021280-670d-11eb-8ef5-a4c642578ab3.png)
+
 
 ——标签页——
-![image](https://user-images.githubusercontent.com/53749772/106870512-29979300-670c-11eb-9c04-cb8733cc0eff.png)
+
+![image](https://user-images.githubusercontent.com/53749772/106871853-a9722d00-670d-11eb-9215-79d3dd703cd6.png)
+
 
 ——标签编辑页——
-![image](https://user-images.githubusercontent.com/53749772/106870564-36b48200-670c-11eb-86ab-1deacc2702bc.png)
+
+![image](https://user-images.githubusercontent.com/53749772/106871980-cad31900-670d-11eb-876d-27dffd7a9ee7.png)
+
 
 ——删除标签——
-![image](https://user-images.githubusercontent.com/53749772/106870619-4633cb00-670c-11eb-983c-caefbf41db6b.png)
-稍微有点动态效果
+
+![image](https://user-images.githubusercontent.com/53749772/106872059-de7e7f80-670d-11eb-8893-a4e448b04cb3.png)
+
+稍微有点动态效果~
 
 ——明细页面——
-![image](https://user-images.githubusercontent.com/53749772/106870876-9448ce80-670c-11eb-96a8-41a383cdee4b.png)
+
+![image](https://user-images.githubusercontent.com/53749772/106872228-0b329700-670e-11eb-9036-ad6e95476880.png)
 

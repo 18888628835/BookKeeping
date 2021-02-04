@@ -28,4 +28,19 @@
 
 3、时间可供选择而非记录当前时间
 
-目前功能截图-首页
+——首页——
+![image](https://user-images.githubusercontent.com/53749772/106870348-f6ed9a80-670b-11eb-9363-0b54402908c2.png)
+
+——标签页——
+![image](https://user-images.githubusercontent.com/53749772/106870512-29979300-670c-11eb-9c04-cb8733cc0eff.png)
+
+——标签编辑页——
+![image](https://user-images.githubusercontent.com/53749772/106870564-36b48200-670c-11eb-86ab-1deacc2702bc.png)
+
+——删除标签——
+![image](https://user-images.githubusercontent.com/53749772/106870619-4633cb00-670c-11eb-983c-caefbf41db6b.png)
+稍微有点动态效果
+
+——明细页面——
+![image](https://user-images.githubusercontent.com/53749772/106870876-9448ce80-670c-11eb-96a8-41a383cdee4b.png)
+
